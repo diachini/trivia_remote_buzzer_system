@@ -1,5 +1,7 @@
 {
   "name": "jeopardy_remote_buzzer_system",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }
