@@ -28,8 +28,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        ActionCable.server.broadcast 'web_notifications_channel', message: "<p>Message created! #{@message.sender}</p>"
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
+        format.js { head :no_content}
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }

@@ -1,5 +1,8 @@
 <h1>Action Cable Example</h1>
 
-<div id="messages"></div>
+<%= form_for(@message, remote: true) do |f| %>
+    <%= f.text_area :sender %>
+    <%= f.submit "Ring In" %>
+<% end %>
 
-<p>Find me in app/views/page/index.html.erb</p>
+<div id="messages"></div>
