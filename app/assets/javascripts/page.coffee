@@ -4,4 +4,4 @@
 
 App.room = App.cable.subscriptions.create "WebNotificationsChannel",
   received: (data) ->
-    $('#messages').append data['message']
+    $('#messages').prepend data['message']
