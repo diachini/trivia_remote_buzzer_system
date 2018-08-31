@@ -3,6 +3,7 @@
 <%= form_for(@message, remote: true) do |f| %>
     <%= f.text_area :sender %>
     <%= f.submit "Ring In" %>
+    <%= f.submit "Allow Responses" %>
 <% end %>
 
 <div id="messages"></div>

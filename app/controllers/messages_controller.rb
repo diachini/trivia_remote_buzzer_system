@@ -28,7 +28,9 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        ActionCable.server.broadcast 'web_notifications_channel', message: "<p><b>#{@message.sender}</b> rang in at: #{@message.created_at.strftime('%M:%S.%L')}</p>"
+        button_pressed = params[:commit] == 'Ring In' ? 'rang in' : 'opened up responses'
+        formatted_message = "<div><b>#{@message.sender}</b> #{button_pressed} at: #{@message.created_at.strftime('%M:%S.%L')}</div>"
+        ActionCable.server.broadcast 'web_notifications_channel', message: formatted_message
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
         format.js { head :no_content}
