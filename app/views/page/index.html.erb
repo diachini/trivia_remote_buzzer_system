@@ -1,7 +1,7 @@
 <h1>Action Cable Example</h1>
 
 <%= form_for(@message, remote: true) do |f| %>
-    <%= f.text_area :sender %>
+    <%= f.text_field :sender, placeholder: 'Your name', onchange: 'window.localStorage.setItem("myName", $(this).val())' %>
     <%= f.submit "Ring In" %>
     <%= f.submit "Allow Responses" %>
 <% end %>

@@ -5,3 +5,8 @@
 App.room = App.cable.subscriptions.create "WebNotificationsChannel",
   received: (data) ->
     $('#messages').prepend data['message']
+
+
+$ ->
+  console.log("My name = " + window.localStorage.getItem('myName'));
+  $('#message_sender').val(window.localStorage.getItem('myName'));
