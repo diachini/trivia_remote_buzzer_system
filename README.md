@@ -33,5 +33,12 @@ Things you may want to cover:
   * `brew services start redis`
 
 * Deployment instructions
+  * `brew install heroku/brew/heroku`
+  * `heroku autocomplete`
+  * `printf "$(heroku autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc`
+  * `heroku create`
+  * `heroku config:set YARN_PRODUCTION=true`
+  * `git push heroku master`
+  * `heroku run rake --trace db:migrate`
+  * `heroku addons:create redistogo:nano`
 
-* ...

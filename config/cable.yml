@@ -14,5 +14,5 @@ test: *redis
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDISTOGO_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: jeopardy_remote_buzzer_system_production
