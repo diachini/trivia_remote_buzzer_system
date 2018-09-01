@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'  # sigh -- maybe?
-gem 'webpacker'   # heroku needs this specified to download yarn? https://devcenter.heroku.com/changelog-items/1114
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
