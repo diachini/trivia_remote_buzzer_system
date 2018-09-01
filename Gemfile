@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'jquery-rails'  # sigh -- maybe?
 gem 'webpacker'   # heroku needs this specified to download yarn? https://devcenter.heroku.com/changelog-items/1114
 
 group :development, :test do
