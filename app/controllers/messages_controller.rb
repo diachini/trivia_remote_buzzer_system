@@ -28,7 +28,17 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        button_pressed = params[:commit] == 'Ring In' ? 'rang in' : 'opened up responses'
+        button_pressed =
+          case params[:commit]
+          when 'Ring In'
+            'rang in'
+          when 'Check In'
+            'is in the house'
+          when 'Allow Responses'
+            'opened responses'
+          else
+            'hacked the gibson'
+          end
         formatted_message = "<b>#{@message.sender}</b> #{button_pressed} at: "
         ActionCable.server.broadcast 'web_notifications_channel',
           message: formatted_message,

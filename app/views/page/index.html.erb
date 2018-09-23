@@ -2,6 +2,7 @@
 
 <%= form_for(@message, remote: true) do |f| %>
     <%= f.text_field :sender, placeholder: 'Your name', onchange: 'window.localStorage.setItem("myName", $(this).val())' %>
+    <%= f.submit "Check In" %>
     <%= f.submit "Ring In" %>
     <%= f.submit "Allow Responses" %>
 <% end %>
