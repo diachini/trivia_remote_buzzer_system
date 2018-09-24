@@ -1,10 +1,11 @@
-<h1>Action Cable Example</h1>
+<h1>This iiiiis JetPardy!</h1>
 
 <%= form_for(@message, remote: true) do |f| %>
     <%= f.text_field :sender, placeholder: 'Your name', onchange: 'window.localStorage.setItem("myName", $(this).val())' %>
-    <%= f.submit "Check In" %>
-    <%= f.submit "Ring In" %>
-    <%= f.submit "Allow Responses" %>
+    <%= f.submit "Check In", class: 'check-in' %>
+    <%= f.submit "Allow Responses", class: 'allow-responses' %>
+    <br />
+    <%= f.button "Ring In", type: :submit, class: 'ring-in', name: "commit", value:"Ring In" %>
 <% end %>
 
 <div id="messages"></div>
