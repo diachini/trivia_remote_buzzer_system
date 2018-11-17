@@ -39,7 +39,13 @@ class MessagesController < ApplicationController
           else
             'hacked the gibson'
           end
-        formatted_message = "<b>#{@message.sender}</b> #{button_pressed} at: "
+        sleep_time_delay = ""
+        if params[:commit] == 'Allow Responses'
+          sleep_time = 300 + rand(1000)  # random delay in ms
+          sleep_time_delay = "(#{sleep_time}ms delay)"
+          sleep( sleep_time / 1000.0 )
+        end
+        formatted_message = "<b>#{@message.sender}</b> #{button_pressed} #{sleep_time_delay} at: "
         ActionCable.server.broadcast 'web_notifications_channel',
           message: formatted_message,
           time: @message.created_at,
