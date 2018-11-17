@@ -15,7 +15,11 @@
 }
 
 .ring-in {
-  background-color: green;
+  background-color: gray;
   width: 20em;
   height: 5em;
+}
+
+.ring-in--active {
+  background-color: green;
 }

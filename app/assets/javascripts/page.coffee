@@ -11,6 +11,8 @@ App.room = App.cable.subscriptions.create "WebNotificationsChannel",
     millis = ('00' + time.getMilliseconds()).slice(-3);
     timeStr = hours + ":" + minutes + ":" + seconds + "." + millis
 
+    if data['message_type'] == 'Allow Responses'
+      $('.ring-in').addClass('ring-in--active');
     $('#messages').prepend "<div>" + data['message'] + timeStr + "</div>"
 
 $ ->
