@@ -36,6 +36,8 @@ class MessagesController < ApplicationController
             'is in the house'
           when 'Allow Responses'
             'opened responses'
+          when 'Reset'
+            'reset responses'
           else
             'hacked the gibson'
           end

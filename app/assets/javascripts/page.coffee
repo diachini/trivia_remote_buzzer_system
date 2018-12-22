@@ -13,6 +13,8 @@ App.room = App.cable.subscriptions.create "WebNotificationsChannel",
 
     if data['message_type'] == 'Allow Responses'
       $('.ring-in').addClass('ring-in--active');
+    if data['message_type'] == 'Reset'
+      $('.ring-in').removeClass('ring-in--active');
     $('#messages').prepend "<div>" + data['message'] + timeStr + "</div>"
 
 $ ->

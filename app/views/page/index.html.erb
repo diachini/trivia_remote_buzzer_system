@@ -4,6 +4,7 @@
     <%= f.text_field :sender, placeholder: 'Your name', onchange: 'window.localStorage.setItem("myName", $(this).val())' %>
     <%= f.submit "Check In", class: 'check-in' %>
     <%= f.submit "Allow Responses", class: 'allow-responses' %>
+    <%= f.submit "Reset", class: 'reset' %>
     <br />
     <%= f.button "Ring In", type: :submit, class: 'ring-in', name: "commit", value:"Ring In" %>
 <% end %>
