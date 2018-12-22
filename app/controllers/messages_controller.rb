@@ -41,7 +41,7 @@ class MessagesController < ApplicationController
           end
         sleep_time_delay = ""
         if params[:commit] == 'Allow Responses'
-          sleep_time = 300 + rand(1000)  # random delay in ms
+          sleep_time = 300 + rand(400)  # random delay in ms
           sleep_time_delay = "(#{sleep_time}ms delay)"
           sleep( sleep_time / 1000.0 )
         end
